@@ -1,28 +1,45 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="container">
+    <h1>Форма</h1>
+    <div>
+    <MainForm @updatePersonal="updatePers" v-if="stage == 1"/>
+    <AddressForm @updatePersonal="updateAddress" v-else-if="stage == 2"/>
+    </div>
+    <button class="btn" v-if="done" @click="submit_form">Отправить</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import MainForm from '@/components/MainForm'
+import AddressForm from '@/components/AddressForm'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld,
+  data: () => ({
+    stage: 1,
+    done: false,
+    personal: [],
+    address: []
+  }),
+  methods: {
+    updatePers (data) {
+      console.log(data)
+      this.personal = data
+      this.stage = 2
+    },
+    updateAddress (data) {
+      this.address = data
+      this.stage = 3
+    },
+    submit_form () {
+      console.log('submitted')
+    }
   },
-};
+  components: {
+    MainForm, AddressForm
+  }
+}
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import './assets/css/index.css';
 </style>
