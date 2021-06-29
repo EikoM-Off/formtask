@@ -1,9 +1,28 @@
+html, body {
+  background: rgb(0,184,169);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top;
+  font-family: Arial, Helvetica;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  background: linear-gradient(
+45deg
+, rgba(0,184,169,1) 0%, rgba(246,65,108,1) 50%, rgba(255,222,125,1) 100%);
+}
 .container {
   margin: 0 auto;
   max-width: 1280px;
   width: 90%;
 }
-
+.context {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  display: inline-grid;
+}
 input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
   background-color: transparent;
   border: none;
@@ -22,6 +41,11 @@ input.invalid:not([type]), input.invalid:not([type]):focus, input[type=text].inv
   border-bottom: 1px solid #FFB6B9;
   -webkit-box-shadow: 0 1px 0 0 #FFB6B9;
   box-shadow: 0 1px 0 0 #FFB6B9;
+}
+input:not([type]):focus:not([readonly]),input[type=text]:not(.browser-default):focus:not([readonly]),input[type=password]:not(.browser-default):focus:not([readonly]),input[type=email]:not(.browser-default):focus:not([readonly]),input[type=url]:not(.browser-default):focus:not([readonly]),input[type=time]:not(.browser-default):focus:not([readonly]),input[type=date]:not(.browser-default):focus:not([readonly]),input[type=datetime]:not(.browser-default):focus:not([readonly]),input[type=datetime-local]:not(.browser-default):focus:not([readonly]),input[type=tel]:not(.browser-default):focus:not([readonly]),input[type=number]:not(.browser-default):focus:not([readonly]),input[type=search]:not(.browser-default):focus:not([readonly]),textarea.materialize-textarea:focus:not([readonly]){
+  border-bottom:1px solid #61C0BF;
+  -webkit-box-shadow:0 1px 0 0 #61C0BF;
+  box-shadow:0 1px 0 0 #61C0BF
 }
 label {
   font-size: .8rem;
@@ -47,6 +71,34 @@ label {
   position: relative;
   top: 10px;
 }
+.divider {
+  height: 1px;
+  overflow: hidden;
+  background-color: #e0e0e0;
+}
+.shadow {
+  -webkit-box-shadow: 0 8px 17px 2px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%), 0 5px 5px -3px rgb(0 0 0 / 20%);
+  box-shadow: 0 8px 17px 2px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%), 0 5px 5px -3px rgb(0 0 0 / 20%);
+}
+.progress {
+  position: relative;
+  height: 4px;
+  display: block;
+  width: 100%;
+  background-color: #BBDED6;
+  border-radius: 2px;
+  margin: .5rem 0 1rem 0;
+  overflow: hidden;
+}
+.progress .determinate {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #61C0BF;
+  -webkit-transition: width .3s linear;
+  transition: width .3s linear;
+}
 .btn {
   border: none;
   border-radius: 2px;
@@ -59,4 +111,43 @@ label {
   text-transform: uppercase;
   vertical-align: middle;
   cursor: pointer;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.left-align {
+  text-align: left;
+}
+.right-align {
+  text-align: right;
+}
+.center, .center-align {
+  text-align: center;
+}
+.formfooter {
+  display: inline-block;
+}
+@media (min-width: 768px) {
+  .formcontainer {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 30%;
+  }
+}
+@media (max-width: 768px) {
+  .formcontainer {
+    margin: 0 auto;
+    max-width: 768px;
+    width: 50%;
+  }
+}
+@media (max-width: 375px) {
+  .formcontainer {
+    margin: 0 auto;
+    max-width: 375px;
+    width: 100%;
+  }
 }

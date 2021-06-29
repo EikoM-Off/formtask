@@ -1,9 +1,9 @@
 <template>
   <div id="app" class="container">
-    <h1>Форма</h1>
-    <div>
-    <MainForm @updatePersonal="updatePers" v-if="stage == 1"/>
-    <AddressForm @updatePersonal="updateAddress" v-else-if="stage == 2"/>
+    <h1 class="center">Форма</h1>
+    <div class="formcontainer">
+    <MainForm @updatePersonal="updatePers" v-show="stage == 1"/>
+    <AddressForm @updatePersonal="updateAddress" @back="stage--" v-show="stage == 2"/>
     </div>
     <button class="btn" v-if="done" @click="submit_form">Отправить</button>
   </div>
