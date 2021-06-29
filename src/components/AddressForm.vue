@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import { required } from 'vuelidate/lib/validators'
+import { required, alphaNum } from 'vuelidate/lib/validators'
 
 export default {
   data: () => ({
@@ -51,7 +51,12 @@ export default {
     house: ''
   }),
   validations: {
-    city: { required }
+    city: { required, alphaNum },
+    index: { alphaNum },
+    country: { alphaNum },
+    region: { alphaNum },
+    street: { alphaNum },
+    house: { alphaNum }
   },
   methods: {
     next () {
