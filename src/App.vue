@@ -2,8 +2,12 @@
   <div id="app" class="container">
     <h1 class="center">Форма</h1>
     <div class="formcontainer">
+    <transition name="fade" leave-active-class="" mode="in-out">
     <MainForm @updatePersonal="updatePers" v-show="stage == 1"/>
+    </transition>
+    <transition name="fade" leave-active-class="" mode="in-out">
     <AddressForm @updatePersonal="updateAddress" @back="stage--" v-show="stage == 2"/>
+    </transition>
     </div>
     <button class="btn" v-if="done" @click="submit_form">Отправить</button>
   </div>
@@ -42,4 +46,5 @@ export default {
 
 <style lang="scss">
 @import './assets/css/index.css';
+@import './assets/css/transitions.css';
 </style>
