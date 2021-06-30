@@ -2,12 +2,8 @@
   <div id="app" class="container">
     <h1 class="center">Форма</h1>
     <div class="formcontainer">
-    <transition name="fade" leave-active-class="" mode="in-out">
-    <MainForm @updatePersonal="updatePers" v-show="stage == 1"/>
-    </transition>
-    <transition name="fade" leave-active-class="" mode="in-out">
+    <MainForm @updatePersonal="updatePers" leave-active-class="" v-show="stage == 1"/>
     <AddressForm @updatePersonal="updateAddress" @back="stage--" v-show="stage == 2"/>
-    </transition>
     </div>
     <button class="btn" v-if="done" @click="submit_form">Отправить</button>
   </div>

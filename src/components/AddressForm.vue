@@ -14,7 +14,7 @@
             <label class="uplabel" for="region">Регион</label>
             <input type="text" v-model="region" id="region">
 
-            <label class="uplabel" for="city">Город*</label>
+            <label class="uplabel accent" for="city">Город*</label>
             <input type="text" v-model="city" id="city"
             :class="{invalid: ($v.city.$dirty && !$v.city.required)}">
             <small

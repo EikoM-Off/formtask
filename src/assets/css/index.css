@@ -12,6 +12,9 @@ html, body {
 45deg
 , rgba(0,184,169,1) 0%, rgba(246,65,108,1) 50%, rgba(255,222,125,1) 100%);
 }
+.accent {
+  color: #2B2E4A;
+}
 .container {
   margin: 0 auto;
   max-width: 1280px;
@@ -134,14 +137,14 @@ label {
   .formcontainer {
     margin: 0 auto;
     max-width: 1280px;
-    width: 30%;
+    width: 400px;
   }
 }
 @media (max-width: 768px) {
   .formcontainer {
     margin: 0 auto;
     max-width: 768px;
-    width: 50%;
+    width: 300px;
   }
 }
 @media (max-width: 375px) {
